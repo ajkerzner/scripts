@@ -63,9 +63,9 @@ echo "$pre Checking if ~/.ssh exists"
    echo "$pre Copying key to workers..."
    cd /home/pi
    echo "$pre USER INPUT REQUIRED"
-   cat /home/pi/.ssh/id_rsa_pub | ssh pi@"$ipopt1" 'cat >> /home/pi/.ssh/authorized_keys'
-   cat /home/pi/.ssh/id_rsa_pub | ssh pi@"$ipopt2" 'cat >> /home/pi/.ssh/authorized_keys'
-   cat /home/pi/.ssh/id_rsa_pub | ssh pi@"$ipopt3" 'cat >> /home/pi/.ssh/authorized_keys'
+   cat /home/pi/.ssh/id_rsa.pub | ssh pi@"$ipopt1" 'cat >> /home/pi/.ssh/authorized_keys'
+   cat /home/pi/.ssh/id_rsa.pub | ssh pi@"$ipopt2" 'cat >> /home/pi/.ssh/authorized_keys'
+   cat /home/pi/.ssh/id_rsa.pub | ssh pi@"$ipopt3" 'cat >> /home/pi/.ssh/authorized_keys'
 
 
    echo "$pre Creating ~/mpi4py directory..."
@@ -97,8 +97,8 @@ echo "$pre Checking if ~/.ssh exists"
    echo "$pre Okay, it should be done!"
  fi
 
- echo "$pre Rebooting now..."
- sudo reboot now
-
-~
-
+ echo "$pre Reboot to finish installation."
+ #sudo reboot now
+ 
+ 
+ 
