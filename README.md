@@ -2,9 +2,13 @@
 
 This contains scripts to prepare a raspberry pi cluster for MPI-based distributed programming in python.
 
+The actual commands executed by this script were provided by the instruction sheet.
+If you have no idea what this is, leave.
+
+
 This is a set of bash scripts.
 
-"script.sh" - the original script. NOT GUARANTEED TO WORK.
+"script.sh" - the original script. WILL NOT WORK.
 
 "script1.sh" - part 1 of the script.
 
