@@ -82,7 +82,12 @@ echo "$pre Checking if ~/.ssh exists"
 
    echo "$pre Creating beginner's script..."
    cd /home/pi/mpi4py
-   echo 'from mpi4py import MPI\nimport sys\nsize = MPI.COMM_WORLD.Get_size()\nrank = MPI.COMM_WORLD.Get_rank()\nname = MPI.Get_processor_name()\nsys.stdout.write("Hello world! I am process %d of %d on %s.\n" % (rank,size,name))' >> helloworld.py
+   echo 'from mpi4py import MPI' > helloworld.py
+   echo 'import sys' >> helloworld.py
+   echo 'size = MPI.COMM_WORLD.Get_size()' >> helloworld.py
+   echo 'rank = MPI.COMM_WORLD.Get_rank()' >> helloworld.py
+   echo 'name = MPI.Get_processor_name()' >> helloworld.py
+   echo 'sys.stdout.write("Hello world! I am process %d of %d on %s.\n" % (rank,size,name))' >> helloworld.py
    sudo chmod a+rwx helloworld.py
    sudo chown pi:pi helloworld.py
 
