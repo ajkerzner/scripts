@@ -68,13 +68,20 @@ echo "$pre Checking if ~/.ssh exists"
    cat /home/pi/.ssh/id_rsa.pub | ssh pi@"$ipopt3" 'cat >> /home/pi/.ssh/authorized_keys'
 
 
+ echo "$pre Checking if ~/mpi4py directory exists..."
+ if [ ! -d "/home/pi/mpi4py" ]
+ then
+ 
    echo "$pre Creating ~/mpi4py directory..."
    mkdir /home/pi/mpi4py
+ fi
+   
 
    echo "$pre Creating machinefile at ~/mpi4py/workers..."
    echo "$ipopt0\n$ipopt1\n$ipopt2\n$ipopt3" > /home/pi/mpi4py/workers
 
    echo "$pre Creating beginner's script..."
+   cd /home/pi/mpi4py
    echo 'from mpi4py import MPI\nimport sys\nsize = MPI.COMM_WORLD.Get_size()\nrank = MPI.COMM_WORLD.Get_rank()\nname = MPI.Get_processor_name()\nsys.stdout.write("Hello world! I am process %d of %d on %s.\n" % (rank,size,name))' >> helloworld.py
    sudo chmod a+rwx helloworld.py
    sudo chown pi:pi helloworld.py
