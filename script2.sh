@@ -78,7 +78,10 @@ echo "$pre Checking if ~/.ssh exists"
    
 
    echo "$pre Creating machinefile at ~/mpi4py/workers..."
-   echo "$ipopt0\n$ipopt1\n$ipopt2\n$ipopt3" > /home/pi/mpi4py/workers
+   echo "$ipopt0" > /home/pi/mpi4py/workers
+   echo "$ipopt1" >> /home/pi/mpi4py/workers
+   echo "$ipopt2" >> /home/pi/mpi4py/workers
+   echo "$ipopt3" >> /home/pi/mpi4py/workers
 
    echo "$pre Creating beginner's script..."
    cd /home/pi/mpi4py
@@ -109,7 +112,7 @@ echo "$pre Checking if ~/.ssh exists"
    echo "$pre Okay, it should be done!"
  fi
 
- echo "$pre Reboot to finish installation."
+ echo "$pre Rebooting is recommended, but [probably] optional."
  #sudo reboot now
  
  
