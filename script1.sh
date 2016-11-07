@@ -44,18 +44,14 @@
 
 
 
- echo "$pre Installing python-mpi4py"
- sudo apt-get install python-mpi4py -y
-
- echo "$pre Installing python-numpy"
- sudo apt-get install python-numpy -y
- echo "$pre Installing python-pandas"
- sudo apt-get install python-pandas -y
+ echo "$pre USER INPUT REQUIRED"
+ echo "$pre Installing python-mpi4py, python-numpy, and python-pandas"
+ sudo apt-get install python-mpi4py python-numpy python-pandas
 
  echo "$pre Changing host to '$newhost'"
 
  echo "$pre modifying /etc/hosts"
- sed -i "s/\(127.0.1.1\s*\)raspberrypi/\1$newhost/" /etc/hosts
+ sudo sed -i "s/\(127\.0\.1\.1\s*\)raspberrypi/\1$newhost/" /etc/hosts
 
  if [ $machine_id -eq 0 ]
  then
