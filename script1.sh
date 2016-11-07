@@ -77,7 +77,7 @@
 
 
  echo "$pre Modifying /etc/network/interfaces"
- sudo sed -i "s/\(iface eth0 inet\) manual/auto eth0\n\1 static\naddress $newipaddr \nnetm    ask 255.255.255.0\nnetwork 192.168.1.0\nbroadcast 192.168.1.255\ngateway 192.168.1.254/"     /etc/network/interfaces
+ sudo sed -i "s/\(iface eth0 inet\) manual/auto eth0\n\1 static\naddress $newipaddr \nnetmask 255.255.255.0\nnetwork 192.168.1.0\nbroadcast 192.168.1.255\ngateway 192.168.1.254/"     /etc/network/interfaces
 
  
  echo "$pre End of part 1. The system will now reboot."
