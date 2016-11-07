@@ -58,7 +58,7 @@ echo "$pre Checking if ~/.ssh exists"
  then
    echo "$pre Generating keys for boss..."
    cd /home/pi/.ssh
-   ssh-keygen -t rsa -C "$hostopt0" -f "/home/pi/.ssh/id-rsa" -N ''
+   ssh-keygen -t rsa -C "$hostopt0" -f "/home/pi/.ssh/id_rsa" -N ''
  
    echo "$pre Copying key to workers..."
    cd /home/pi
