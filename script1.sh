@@ -44,9 +44,9 @@
 
 
 
- echo "$pre USER INPUT REQUIRED"
+ #echo "$pre USER INPUT REQUIRED"
  echo "$pre Installing python-mpi4py, python-numpy, and python-pandas"
- sudo apt-get install python-mpi4py python-numpy python-pandas
+ sudo apt-get install python-mpi4py python-numpy python-pandas -y
 
  echo "$pre Changing host to '$newhost'"
 
