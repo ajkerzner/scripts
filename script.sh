@@ -2,6 +2,9 @@
 
  echo "Alex's experimental install script"
 
+ echo "Don't use this."
+ exit 1
+ 
  pre="[MPI_INSTALL]"
 
  echo -n "$pre Which machine is this? [0=boss, 1=worker1, 2=worker2, 3=worker3] "
