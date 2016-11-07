@@ -56,7 +56,8 @@
  if [ $machine_id -eq 0 ]
  then
    echo "$pre Adding additional machines for boss..."
-   sudo echo "\n$ipopt1 $hostopt1" >> /etc/hosts
+   sudo echo "" >> /etc/hosts
+   sudo echo "$ipopt1 $hostopt1" >> /etc/hosts
    sudo echo "$ipopt2 $hostopt2" >> /etc/hosts
    sudo echo "$ipopt3 $hostopt3" >> /etc/hosts
  fi
@@ -76,9 +77,8 @@
  sudo sed -i "s/\(iface eth0 inet\) manual/auto eth0\n\1 static\naddress $newipaddr \nnetmask 255.255.255.0\nnetwork 192.168.1.0\nbroadcast 192.168.1.255\ngateway 192.168.1.254/"     /etc/network/interfaces
 
  
- echo "$pre End of part 1. The system will now reboot."
- echo "$pre RUN PART 2 WHEN THE SYSTEM IS BACK ONLINE"
- sudo reboot now
+ echo "$pre End of part 1. Please reboot with 'sudo reboot now' before running part 2."
+ #sudo reboot now
  
  
  
