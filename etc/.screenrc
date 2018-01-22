@@ -1,16 +1,22 @@
 # Credit for original: https://gist.github.com/joaopizani/2718397
 
-
+# Adjustments:
+# - Standardized clock
+# - Altscreen
+# - Better screen defaults
 
 # The following two lines give a two-line status, with the current window highlighted
 hardstatus alwayslastline
-hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%Y-%m-%d %{W}%c:%s%{g}]'
 
 # huge scrollback buffer
 defscrollback 5000
 
 # no welcome message
 startup_message off
+
+# Enable second screen buffer
+altscreen on
 
 # 256 colors
 attrcolor b ".I"
@@ -21,10 +27,10 @@ defbce on
 mousetrack on
 
 # default windows
-screen -t Shell1  1 zsh
-screen -t Shell2  2 zsh
-screen -t Python  3 python
-screen -t Media   4 zsh
+screen -t Shell   1 zsh
+screen -t Run     2 zsh
+screen -t Build   3 zsh
+screen -t Other   4 zsh
 select 0
 bind c screen 1 # window numbering starts at 1 not 0
 bind 0 select 10
